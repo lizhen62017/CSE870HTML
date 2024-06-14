@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSE870 prototype</title>
+    <style>
+        <!--
+        .parent 
+        {
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+        .image1 
+        {
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+        .image2 
+        {
+            position: absolute;
+            top: 190px;
+            left: 215px;
+        }
+        -->
+        body 
+        {
+            background-image: url("driverview.jpg");
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover; 
+        }
+        #cameraview 
+        {
+            display: none;
+            position: absolute;
+            top: 600px;
+            left: 650px;
+        }
+        #dashboardsafe
+        {
+            display: none;
+            position: absolute;
+            top: 470px;
+            left: 340px;
+        }
+        #dashboarddanger
+        {
+            display: none;
+            position: absolute;
+            top: 470px;
+            left: 340px;
+        }
+        #button1
+        {
+            display: block;
+            position: absolute;
+            top: 850px;
+            left: 730px;
+        }
+        #button2
+        {
+            display: none;
+            position: absolute;
+            top: 850px;
+            left: 730px;
+        }
+        #button3
+        {
+            display: none;
+            position: absolute;
+            top: 870px;
+            left: 730px;
+        }
+        #button4
+        {
+            display: none;
+            position: absolute;
+            top: 870px;
+            left: 730px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Passenger Backup Assistant System</h1>
+        <!--
+        <div class="parent">
+        <figure>
+            <img class="image1" src="driverview.jpg" width="800" height="500" />
+                <figcaption>Driver View</figcaption>
+            </figure>
+
+            <img class="image2" src="dashboarddanger.png" width="118" height="49" />
+        </div>
+
+        <form action="show()">
+            <input type="button" value="Hello world!">
+        </form>
+        -->
+        <div>
+            <img id="cameraview" src="cameraview.jpg" alt="cameraview" width="250" height="130"/>
+            <img id="dashboardsafe" src="dashboardsafe.png" width="230" height="100"/>
+            <img id="dashboarddanger" src="dashboarddanger.png" width="230" height="100"/>
+        </div>
+    
+        <button type="button1" onclick="show1()" id="button1"> Shift to Rear Gear </button>
+        <button type="button2" onclick="show2()" id="button2"> Shift to Drive Gear </button>
+        <button type="button3" onclick="show3()" id="button3"> Approach Object </button>
+        <button type="button4" onclick="show4()" id="button4"> Leave Object </button>
+
+        <script>
+            function show1() 
+            {
+                document.getElementById('cameraview').style.display = "block";
+                document.getElementById('dashboardsafe').style.display = "block";
+                document.getElementById('button1').style.display = "none";
+                document.getElementById('button2').style.display = "block";
+                document.getElementById('button3').style.display = "block";
+            }
+            function show2() 
+            {
+                document.getElementById('cameraview').style.display = "none";
+                document.getElementById('dashboardsafe').style.display = "none";
+                document.getElementById('button1').style.display = "block";
+                document.getElementById('button2').style.display = "none";
+                document.getElementById('button3').style.display = "none";
+            }
+            function show3() 
+            {
+                document.getElementById('dashboardsafe').style.display = "none";
+                document.getElementById('dashboarddanger').style.display = "block";
+                document.getElementById('button3').style.display = "none";
+                document.getElementById('button4').style.display = "block";
+            }
+            function show3() 
+            {
+                document.getElementById('dashboardsafe').style.display = "block";
+                document.getElementById('dashboarddanger').style.display = "none";
+                document.getElementById('button3').style.display = "block";
+                document.getElementById('button4').style.display = "none";
+            }
+        </script>
+    </body>
+</html>
